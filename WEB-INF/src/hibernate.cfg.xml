@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"
+  [ <!ENTITY mapping-tables-core SYSTEM "classpath://com/doxacore/mapping-tables-core.cfg.xml"> 
+   <!ENTITY hibernate-core SYSTEM "classpath://com/doxacore/hibernate-core.cfg.xml">
+   <!ENTITY mapping-tables-instituto SYSTEM "classpath://com/instituto/mapping-tables-instituto.xml"> ]>
+
+<hibernate-configuration>
+    <session-factory>
+    
+    	<property name="dialect">com.doxacore.dialect.PostgresSqlCustomDialect</property>
+ 
+      &hibernate-core;
+  
+      &mapping-tables-core;
+      
+      &mapping-tables-instituto;
+        
+    </session-factory>
+</hibernate-configuration>

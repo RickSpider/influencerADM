@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Created by ZK Studio -->
+
+<zk>
+	<session-config>
+		<device-type>ajax</device-type>
+		<automatic-timeout>true</automatic-timeout>
+		<timeout-uri>/timeout.zul</timeout-uri>
+		<session-timeout>14400000</session-timeout>
+	</session-config>
+
+	<listener>
+		<listener-class>com.doxacore.util.OpenSessionInViewListener
+		</listener-class>
+	</listener>
+
+	<library-property>
+		<name>org.zkoss.theme.preferred</name>
+		<value>iceblue_c</value>
+	</library-property>
+	
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/WEB-INF/error.zul</location>
+	</error-page>
+
+</zk>
+
+
+
