@@ -4,7 +4,7 @@
   "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"
   [ <!ENTITY mapping-tables-core SYSTEM "classpath://com/doxacore/mapping-tables-core.cfg.xml"> 
    <!ENTITY hibernate-core SYSTEM "classpath://com/doxacore/hibernate-core.cfg.xml">
-   <!ENTITY mapping-tables-instituto SYSTEM "classpath://com/instituto/mapping-tables-instituto.xml"> ]>
+   <!ENTITY mapping-tables-influencerADM SYSTEM "classpath://com/influencerADM/mapping-tables-influencerADM.xml"> ]>
 
 <hibernate-configuration>
     <session-factory>
@@ -15,7 +15,7 @@
   
       &mapping-tables-core;
       
-      &mapping-tables-instituto;
+      &mapping-tables-influencerADM;
         
     </session-factory>
 </hibernate-configuration>
