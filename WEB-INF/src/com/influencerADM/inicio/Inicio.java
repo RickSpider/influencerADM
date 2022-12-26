@@ -1,6 +1,6 @@
 package com.influencerADM.inicio;
 
-public class inicio {
+public class Inicio {
 
 
 	public void beforeLogin() {

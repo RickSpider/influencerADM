@@ -6,5 +6,10 @@
 		visible="@load(vm.menuVisible( vm.pageMap[self.label].values().size() ))" />
 
 	<!-- Para crear mas menus copiar en nav y solo cambiar el label y el icono -->
+	
+	<nav label="Administración" iconSclass="z-icon-home"
+		badgeText="@load(vm.pageMap[self.label].values().size() )"
+		children="@load(vm.pageMap[self.label].values()) @template('navitem')"
+		visible="@load(vm.menuVisible( vm.pageMap[self.label].values().size() ))" />
 
 </zk>
