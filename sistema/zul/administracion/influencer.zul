@@ -1,0 +1,114 @@
+<?page title="Influencers" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Influencer" border="normal"
+		viewModel="@id('vm') @init('com.influencerADM.sistema.administracion.InfluencerVM')"
+		vflex="1" id="Body" apply="org.zkoss.bind.BindComposer">
+
+		<hlayout vflex="1">
+			
+				<vlayout hflex="1" vflex="1">
+
+					<hbox pack="end" hflex="1" >
+
+						<button label="Agregar"
+							iconSclass=" z-icon-plus" onClick="@command('modalInfluencerAgregar')" disabled="@load(!vm.opCrearInfluencer)" />
+
+					</hbox>
+
+					<listbox emptyMessage="lista vacía..." mold="paging"
+						vflex="1" model="@load(vm.lInfluencers)" checkmark="true">
+
+						<listhead>
+
+							<listheader hflex="min" align="center" />
+							<listheader label="ID" align="right"
+								hflex="min" />
+							<listheader label="Nombre" align="left"
+								 />
+							<listheader label="Apellido" align="left"
+								/>
+							<listheader align="center" 
+								width="100px"/>
+
+
+						</listhead>
+
+
+						<auxhead>
+
+							<auxheader />
+							<auxheader />
+							<auxheader>
+								<textbox
+									value="@bind(vm.filtroColumns[0])" instant="true"
+									onChange="@command('filtrarInfluencer')" hflex="1" />
+							</auxheader>
+
+							<auxheader>
+								<textbox
+									value="@bind(vm.filtroColumns[1])" instant="true"
+									onChange="@command('filtrarInfluencer')" hflex="1" />
+							</auxheader>
+							
+							<auxheader>
+								<textbox
+									value="@bind(vm.filtroColumns[2])" instant="true"
+									onChange="@command('filtrarInfluencer')" hflex="1" />
+							</auxheader>
+	
+						</auxhead>
+
+						<template name="model">
+
+							<listitem>
+								<listcell />
+								<listcell label="@load(each.influencerid)" />
+								<listcell label="@load(each.Nombre)" />
+								<listcell
+									label="@load(each.Apellido)" />
+								
+
+								<listcell>
+									<hlayout>
+
+										<button iconSclass="z-icon-edit"
+											onClick="@command('modalInfluencer', influencerid=each.influencerid)"
+											tooltiptext="Editar" disabled="@load(!vm.opEditarInfluencer)"/>
+										<button
+											iconSclass="z-icon-trash-o" style="background-color:red"
+											onClick="@command('borrarInfluencerConfirmacion', influencer=each)"
+											tooltiptext="Borrar" disabled="@load(!vm.opBorrarInfluencer)"/>
+
+
+									</hlayout>
+
+
+								</listcell>
+
+
+							</listitem>
+
+
+						</template>
+
+						<listfoot>
+							<listfooter span="4" align="left">
+								<hlayout>
+									<label
+										value="@load(vm.lInfluencers.size())" />
+									<label value="items" />
+								</hlayout>
+							</listfooter>
+						</listfoot>
+
+
+					</listbox>
+
+				</vlayout>
+
+		
+			
+		</hlayout>
+
+	</window>
+</zk>

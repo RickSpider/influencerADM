@@ -16,4 +16,9 @@ public class ParamsLocal extends Params {
 	
 	//SIGLA TIPOTIPOS
 	
+	
+	public static final String OP_CREAR_INFLUENCER = "CrearInfluencer";
+	public static final String OP_EDITAR_INFLUENCER = "EditarInfluencer";
+	public static final String OP_BORRAR_INFLUENCER = "BorrarInfluencer";
+	
 }
