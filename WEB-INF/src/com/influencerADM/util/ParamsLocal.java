@@ -21,4 +21,9 @@ public class ParamsLocal extends Params {
 	public static final String OP_EDITAR_INFLUENCER = "EditarInfluencer";
 	public static final String OP_BORRAR_INFLUENCER = "BorrarInfluencer";
 	
+	public static final String OP_CREAR_AGENCIA = "CrearAgencia";
+	public static final String OP_EDITAR_AGENCIA = "EditarAgencia";
+	public static final String OP_BORRAR_AGENCIA = "BorrarAgencia";
+	
+	
 }

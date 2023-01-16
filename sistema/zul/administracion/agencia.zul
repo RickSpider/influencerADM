@@ -1,7 +1,7 @@
-<?page title="Influencers" contentType="text/html;charset=UTF-8"?>
+<?page title="Agencias" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Influencer" border="normal"
-		viewModel="@id('vm') @init('com.influencerADM.sistema.administracion.InfluencerVM')"
+<window title="Agencia" border="normal"
+		viewModel="@id('vm') @init('com.influencerADM.sistema.administracion.AgenciaVM')"
 		vflex="1" id="Body" apply="org.zkoss.bind.BindComposer">
 
 		<hlayout vflex="1">
@@ -11,22 +11,21 @@
 					<hbox pack="end" hflex="1" >
 
 						<button label="Agregar"
-							iconSclass=" z-icon-plus" onClick="@command('modalInfluencerAgregar')" disabled="@load(!vm.opCrearInfluencer)" />
+							iconSclass=" z-icon-plus" onClick="@command('modalAgenciaAgregar')" disabled="@load(!vm.opCrearAgencia)" />
 
 					</hbox>
 
 					<listbox emptyMessage="lista vacía..." mold="paging"
-						vflex="1" model="@load(vm.lInfluencers)" checkmark="true">
+						vflex="1" model="@load(vm.lAgencias)" checkmark="true">
 
 						<listhead>
 
 							<listheader hflex="min" align="center" />
 							<listheader label="ID" align="right"
 								hflex="min" />
-							<listheader label="Nombre" align="left"
+							<listheader label="Agencia" align="left"
 								 />
-							<listheader label="Apellido" align="left"
-								/>
+		
 							<listheader align="center" 
 								width="100px"/>
 
@@ -41,42 +40,35 @@
 							<auxheader>
 								<textbox
 									value="@bind(vm.filtroColumns[0])" instant="true"
-									onChange="@command('filtrarInfluencer')" hflex="1" />
+									onChange="@command('filtrarAgencia')" hflex="1" />
 							</auxheader>
 
 							<auxheader>
 								<textbox
 									value="@bind(vm.filtroColumns[1])" instant="true"
-									onChange="@command('filtrarInfluencer')" hflex="1" />
+									onChange="@command('filtrarAgencia')" hflex="1" />
 							</auxheader>
 							
-							<auxheader>
-								<textbox
-									value="@bind(vm.filtroColumns[2])" instant="true"
-									onChange="@command('filtrarInfluencer')" hflex="1" />
-							</auxheader>
-	
+				
 						</auxhead>
 
 						<template name="model">
 
 							<listitem>
 								<listcell />
-								<listcell label="@load(each.influencerid)" />
-								<listcell label="@load(each.nombre)" />
-								<listcell label="@load(each.apellido)" />
-								
+								<listcell label="@load(each.agenciaid)" />
+								<listcell label="@load(each.agencia)" />
 
 								<listcell>
 									<hlayout>
 
 										<button iconSclass="z-icon-edit"
-											onClick="@command('modalInfluencer', influencerid=each.influencerid)"
-											tooltiptext="Editar" disabled="@load(!vm.opEditarInfluencer)"/>
+											onClick="@command('modalAgencia', agenciaid=each.agenciaid)"
+											tooltiptext="Editar" disabled="@load(!vm.opEditarAgencia)"/>
 										<button
 											iconSclass="z-icon-trash-o" style="background-color:red"
-											onClick="@command('borrarInfluencerConfirmacion', influencer=each)"
-											tooltiptext="Borrar" disabled="@load(!vm.opBorrarInfluencer)"/>
+											onClick="@command('borrarAgenciaConfirmacion', agencia=each)"
+											tooltiptext="Borrar" disabled="@load(!vm.opBorrarAgencia)"/>
 
 
 									</hlayout>
@@ -94,7 +86,7 @@
 							<listfooter span="4" align="left">
 								<hlayout>
 									<label
-										value="@load(vm.lInfluencers.size())" />
+										value="@load(vm.lAgencias.size())" />
 									<label value="items" />
 								</hlayout>
 							</listfooter>

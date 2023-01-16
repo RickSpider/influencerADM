@@ -1,0 +1,41 @@
+<?page title="agenciaMOdal" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Agencia Crear/Ver/Editar" border="normal"
+		position="center,center" closable="true" mode="modal"
+		action="show: slideDown;hide: slideUp">
+				
+		<tablelayout columns="2">
+		
+			<tablechildren>
+			
+				<label value= "Agencia:" />
+			
+			</tablechildren>
+			
+		
+			<tablechildren>
+			
+				<textbox value="@load(vm.agenciaSelected.agencia) @save(vm.agenciaSelected.agencia, before='guardar')"
+					width="150px" 
+					constraint="no empty: Es campo obligatorio."/>
+			
+			</tablechildren>
+		
+		
+		</tablelayout>
+
+		
+
+			<space height="10px" />
+
+			<hlayout>
+
+				<button label="Aceptar" onClick="@command('guardar')"/>
+
+			</hlayout>
+
+		
+
+
+	</window>
+</zk>
