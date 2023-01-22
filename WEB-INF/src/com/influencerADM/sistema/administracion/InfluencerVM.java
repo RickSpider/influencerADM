@@ -20,8 +20,7 @@ import com.influencerADM.util.TemplateViewModelLocal;
 public class InfluencerVM extends TemplateViewModelLocal{
 
 	
-	private List<Influencer> lInfluencers;
-	private List<Influencer> lInfluencersOri;
+	private List<Object[]> lInfluencers;
 	private Influencer influencerSelected;
 
 	private boolean opCrearInfluencer;
@@ -56,8 +55,9 @@ public class InfluencerVM extends TemplateViewModelLocal{
 	
 	private void cargarInfluencers() {
 
-		this.lInfluencers = this.reg.getAllObjectsByCondicionOrder(Influencer.class.getName(), null, "influencerid asc");
-		this.lInfluencersOri = this.lInfluencers;
+		String sql = this.um.getSql("influencer/listaInfluencers.sql");
+		this.lInfluencers = this.reg.sqlNativo(sql);
+		
 	}
 	
 	private String filtroColumns[];
@@ -142,11 +142,11 @@ public class InfluencerVM extends TemplateViewModelLocal{
 	}
 	
 
-	public List<Influencer> getlInfluencers() {
+	public List<Object[]> getlInfluencers() {
 		return lInfluencers;
 	}
 
-	public void setlInfluencers(List<Influencer> lInfluencers) {
+	public void setlInfluencers(List<Object[]> lInfluencers) {
 		this.lInfluencers = lInfluencers;
 	}
 

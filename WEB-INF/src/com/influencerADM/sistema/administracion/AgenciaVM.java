@@ -22,8 +22,7 @@ import com.influencerADM.util.TemplateViewModelLocal;
 public class AgenciaVM extends TemplateViewModelLocal{
 
 	
-	private List<Agencia> lAgencias;
-	private List<Agencia> lAgenciasOri;
+	private List<Object[]> lAgencias;
 	private Agencia agenciaSelected;
 
 	private boolean opCrearAgencia;
@@ -58,8 +57,9 @@ public class AgenciaVM extends TemplateViewModelLocal{
 	
 	private void cargarAgencias() {
 
-		this.lAgencias = this.reg.getAllObjectsByCondicionOrder(Agencia.class.getName(), null, "agenciaid asc");
-		this.lAgenciasOri = this.lAgencias;
+		String sql = this.um.getSql("agencia/listaAgencias.sql");
+		this.lAgencias = this.reg.sqlNativo(sql);
+		
 	}
 	
 	private String filtroColumns[];
@@ -144,11 +144,11 @@ public class AgenciaVM extends TemplateViewModelLocal{
 	}
 	
 
-	public List<Agencia> getlAgencias() {
+	public List<Object[]> getlAgencias() {
 		return lAgencias;
 	}
 
-	public void setlAgencias(List<Agencia> lAgencias) {
+	public void setlAgencias(List<Object[]> lAgencias) {
 		this.lAgencias = lAgencias;
 	}
 

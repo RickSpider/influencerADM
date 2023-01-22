@@ -62,20 +62,20 @@
 
 							<listitem>
 								<listcell />
-								<listcell label="@load(each.influencerid)" />
-								<listcell label="@load(each.nombre)" />
-								<listcell label="@load(each.apellido)" />
+								<listcell label="@load(each[0])" />
+								<listcell label="@load(each[1])" />
+								<listcell label="@load(each[2])" />
 								
 
 								<listcell>
 									<hlayout>
 
 										<button iconSclass="z-icon-edit"
-											onClick="@command('modalInfluencer', influencerid=each.influencerid)"
+											onClick="@command('modalInfluencer', influencerid=each[0])"
 											tooltiptext="Editar" disabled="@load(!vm.opEditarInfluencer)"/>
 										<button
 											iconSclass="z-icon-trash-o" style="background-color:red"
-											onClick="@command('borrarInfluencerConfirmacion', influencer=each)"
+											onClick="@command('borrarInfluencerConfirmacion', influencer=each[0])"
 											tooltiptext="Borrar" disabled="@load(!vm.opBorrarInfluencer)"/>
 
 

@@ -56,18 +56,18 @@
 
 							<listitem>
 								<listcell />
-								<listcell label="@load(each.agenciaid)" />
-								<listcell label="@load(each.agencia)" />
+								<listcell label="@load(each[0])" />
+								<listcell label="@load(each[1])" />
 
 								<listcell>
 									<hlayout>
 
 										<button iconSclass="z-icon-edit"
-											onClick="@command('modalAgencia', agenciaid=each.agenciaid)"
+											onClick="@command('modalAgencia', agenciaid=each[0])"
 											tooltiptext="Editar" disabled="@load(!vm.opEditarAgencia)"/>
 										<button
 											iconSclass="z-icon-trash-o" style="background-color:red"
-											onClick="@command('borrarAgenciaConfirmacion', agencia=each)"
+											onClick="@command('borrarAgenciaConfirmacion', agencia=each[0])"
 											tooltiptext="Borrar" disabled="@load(!vm.opBorrarAgencia)"/>
 
 
