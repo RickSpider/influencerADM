@@ -2,6 +2,6 @@
 <mapping class="com.influencerADM.modelo.InfluencerRedSocial" />
 <mapping class="com.influencerADM.modelo.Agencia" />
 <mapping class="com.influencerADM.modelo.AgenciaUsuario" />
-<mapping class="com.influencerADM.modelo.Cliente" />
+<mapping class="com.influencerADM.modelo.Empresa" />
 <mapping class="com.influencerADM.modelo.Campanha" />
 <mapping class="com.influencerADM.modelo.Publicacion" />

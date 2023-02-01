@@ -36,8 +36,8 @@ public class Campanha extends Modelo implements Serializable{
 	private Agencia agencia;
 	
 	@ManyToOne
-	@JoinColumn(name="clienteid")
-	private Cliente cliente;
+	@JoinColumn(name="empresaid")
+	private Empresa empresa;
 
 	@Temporal(TemporalType.DATE)
 	private Date fechaIni;
@@ -85,13 +85,10 @@ public class Campanha extends Modelo implements Serializable{
 	public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
 	}
-	public Cliente getCliente() {
-		return cliente;
+	public Empresa getEmpresa() {
+		return empresa;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
-	
-	
-	
 }
